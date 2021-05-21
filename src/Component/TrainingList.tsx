@@ -9,7 +9,7 @@ type TrainingListProps = {
 class TrainingList extends React.Component<TrainingListProps> {
     render() {
        return  this.props.list.map((element, i) => {     
-           return (<Training name={element.name}></Training>) 
+           return (<Training training={element} ></Training>) 
         })
       }
   }
