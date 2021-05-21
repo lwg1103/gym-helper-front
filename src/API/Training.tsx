@@ -1,6 +1,9 @@
+import Excercise from "./Excercise";
+
 type Training = {
     id: number,
-    name: string
+    name: string,
+    excercises: [ Excercise ]
 }
 
 export default Training;
