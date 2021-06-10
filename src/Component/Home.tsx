@@ -20,7 +20,7 @@ class Home extends React.Component<HomeProps, HomeState> {
     }
 
   componentDidMount = () =>  {
-    fetch("http://localhost:8080/training")
+    fetch(process.env.REACT_APP_API_SERVICE + "/training")
       .then(res => res.json())
       .then(
         (result) => {
