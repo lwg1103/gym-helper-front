@@ -1,6 +1,8 @@
 import React from 'react';
 import Excercise from './Excercise';
 import { default as TrainingAPIType } from './../API/Training'
+import Card from 'react-bootstrap/Card'
+import Accordion from 'react-bootstrap/Accordion';
 
 type TrainingProps = {
     training: TrainingAPIType
@@ -9,10 +11,20 @@ type TrainingProps = {
 class Training extends React.Component<TrainingProps> {
     render() {
       return (
-        <div>
-          <h1>{this.props.training.name}</h1>
-          {this.renderExcercises()}
-        </div>
+        <Card>
+          <Card.Header>
+            <Accordion.Toggle eventKey={String(this.props.training.id)}>
+              <h1>{this.props.training.name}</h1>
+            </Accordion.Toggle>
+          </Card.Header>
+          <Accordion.Collapse eventKey={String(this.props.training.id)}>
+            <Card.Body>
+              <Accordion>
+                {this.renderExcercises()}
+              </Accordion>
+            </Card.Body>
+          </Accordion.Collapse>
+        </Card>
       );
     }
 
