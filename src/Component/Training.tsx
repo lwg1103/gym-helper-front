@@ -13,7 +13,7 @@ class Training extends React.Component<TrainingProps> {
       return (
         <Card>
           <Card.Header>
-            <Accordion.Toggle eventKey={String(this.props.training.id)}>
+            <Accordion.Toggle as={Card.Header} eventKey={String(this.props.training.id)}>
               <h1>{this.props.training.name}</h1>
             </Accordion.Toggle>
           </Card.Header>
