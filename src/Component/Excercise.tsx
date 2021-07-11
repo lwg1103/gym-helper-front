@@ -22,10 +22,10 @@ class Excercise extends React.Component<ExcerciseProps> {
           <Accordion.Collapse eventKey={this.props.name}>
             <Card.Body>
               <Accordion>
-              <p>Weight: {this.props.weight} kg</p>
-          <p>Repeats: {this.props.repeats}</p>
-          <p>Series: {this.props.series}</p>
-          <p>Break: {this.props.breakTime} s</p>
+                <p>Weight: {this.props.weight} kg</p>
+                <p>Repeats: {this.props.repeats}</p>
+                <p>Series: {this.props.series}</p>
+                <p>Break: {this.props.breakTime} s</p>
               </Accordion>
             </Card.Body>
           </Accordion.Collapse>
