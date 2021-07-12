@@ -1,6 +1,7 @@
 import React from 'react';
 import TrainingList from './TrainingList';
 import {default as TrainingListApiResponse} from '../API/TrainingList';
+import NavBar from './NavBar/NavBar';
 
 type HomeProps = {
 }
@@ -35,7 +36,12 @@ class Home extends React.Component<HomeProps, HomeState> {
   }
 
     render = () => {
-      return <TrainingList list={this.state.availableTrainings}></TrainingList>
+      return (
+        <div>
+          <NavBar/>
+          <TrainingList list={this.state.availableTrainings}></TrainingList>
+        </div>
+      )
     }
   }
 

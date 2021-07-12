@@ -14,7 +14,7 @@ class Training extends React.Component<TrainingProps> {
         <Card>
           <Card.Header>
             <Accordion.Toggle as={Card.Header} eventKey={String(this.props.training.id)}>
-              <h1>{this.props.training.name}</h1>
+              <h2>{this.props.training.name}</h2>
             </Accordion.Toggle>
           </Card.Header>
           <Accordion.Collapse eventKey={String(this.props.training.id)}>

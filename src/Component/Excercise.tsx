@@ -16,7 +16,7 @@ class Excercise extends React.Component<ExcerciseProps> {
         <Card>
           <Card.Header>
             <Accordion.Toggle as={Card.Header} eventKey={this.props.name}>
-              <h1>{this.props.name}</h1>
+              <h3>{this.props.name}</h3>
             </Accordion.Toggle>
           </Card.Header>
           <Accordion.Collapse eventKey={this.props.name}>
