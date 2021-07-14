@@ -10,6 +10,7 @@ type TrainingListProps = {
 class TrainingList extends React.Component<TrainingListProps> {
     render() {
        return <Accordion> 
+         <h1>Trainings</h1>
            {this.renderTrainings()}
         </Accordion>
       }
