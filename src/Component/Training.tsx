@@ -1,5 +1,5 @@
 import React from 'react';
-import Excercise from './Excercise';
+import Exercise from './Exercise';
 import { default as TrainingAPIType } from './../API/Training'
 import Card from 'react-bootstrap/Card'
 import Accordion from 'react-bootstrap/Accordion';
@@ -20,7 +20,7 @@ class Training extends React.Component<TrainingProps> {
           <Accordion.Collapse eventKey={String(this.props.training.id)}>
             <Card.Body>
               <Accordion>
-                {this.renderExcercises()}
+                {this.renderExercises()}
               </Accordion>
             </Card.Body>
           </Accordion.Collapse>
@@ -28,9 +28,9 @@ class Training extends React.Component<TrainingProps> {
       );
     }
 
-    renderExcercises() {
-      return  this.props.training.excercises.map((element, i) => {     
-          return (<Excercise name={element.name} breakTime={element.breakTime} repeats={element.repeats} series={element.series} weight={element.weight}></Excercise>) 
+    renderExercises() {
+      return  this.props.training.exercises.map((element, i) => {     
+          return (<Exercise name={element.name} breakTime={element.breakTime} repeats={element.repeats} series={element.series} weight={element.weight}></Exercise>) 
        })
      }
   }

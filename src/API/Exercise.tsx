@@ -1,4 +1,4 @@
-type Excercise = {
+type Exercise = {
     name: string,
     weight: number,
     repeats: number,
@@ -6,4 +6,4 @@ type Excercise = {
     breakTime: number
 }
 
-export default Excercise;
+export default Exercise;

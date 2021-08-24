@@ -1,9 +1,9 @@
-import Excercise from "./Excercise";
+import Exercise from "./Exercise";
 
 type Training = {
     id: number,
     name: string,
-    excercises: [ Excercise ]
+    exercises: [ Exercise ]
 }
 
 export default Training;
