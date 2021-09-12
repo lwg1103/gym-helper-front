@@ -2,7 +2,7 @@ import React from 'react';
 import Card from 'react-bootstrap/Card'
 import Accordion from 'react-bootstrap/Accordion';
 
-type ExcerciseProps = {
+type ExerciseProps = {
     name: string,
     weight: number,
     repeats: number,
@@ -10,7 +10,7 @@ type ExcerciseProps = {
     breakTime: number
 }
 
-class Excercise extends React.Component<ExcerciseProps> {
+class Exercise extends React.Component<ExerciseProps> {
     render() {
       return (
         <Card>
@@ -35,4 +35,4 @@ class Excercise extends React.Component<ExcerciseProps> {
   }
 
 
-export default Excercise;
+export default Exercise;
