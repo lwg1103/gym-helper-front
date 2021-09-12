@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import './Login.css';
 import Store from '../../store/Store';
 import { setToken, clearToken } from '../../store/Actions';
+import Cookies from 'universal-cookie';
 
 type LoginProps = {}
 
@@ -42,11 +43,18 @@ export default class Login extends Component<LoginProps, LoginState> {
                 if (result.status == 403) {
                     alert("Wrong credentials");
                 } else if (result.jwtToken) {
-                    Store.dispatch(setToken(result.jwtToken));
+                    this.updateApiKey(result.jwtToken);
                 } else {
                     alert("Unknown error, try again later");
                 }
             });
+    }
+
+    updateApiKey = (key: string) => {
+        const cookies = new Cookies();
+        cookies.set('token', key, { path: '/' });
+        cookies.set('isAuthenticated', true, { path: '/' });
+        Store.dispatch(setToken(key));
     }
 
     render = () => {
