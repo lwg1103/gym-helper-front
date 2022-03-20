@@ -1,4 +1,5 @@
 type Exercise = {
+    id: number,
     name: string,
     weight: number,
     repeats: number,
