@@ -1,8 +1,10 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card'
 import Accordion from 'react-bootstrap/Accordion';
+import { Link } from 'react-router-dom';
 
 type ExerciseProps = {
+    id: number,
     name: string,
     weight: number,
     repeats: number,
@@ -27,6 +29,7 @@ class Exercise extends React.Component<ExerciseProps> {
                 <p>Series: {this.props.series}</p>
                 <p>Break: {this.props.breakTime} s</p>
               </Accordion>
+              <Link to={"/exercise/" + this.props.id}>edit</Link>
             </Card.Body>
           </Accordion.Collapse>
         </Card>

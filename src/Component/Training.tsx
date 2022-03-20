@@ -30,7 +30,7 @@ class Training extends React.Component<TrainingProps> {
 
     renderExercises() {
       return  this.props.training.exercises.map((element, i) => {     
-          return (<Exercise name={element.name} breakTime={element.breakTime} repeats={element.repeats} series={element.series} weight={element.weight}></Exercise>) 
+          return (<Exercise id={element.id} name={element.name} breakTime={element.breakTime} repeats={element.repeats} series={element.series} weight={element.weight}></Exercise>) 
        })
      }
   }

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import './Login.css';
 import Store from '../../store/Store';
-import { setToken, clearToken } from '../../store/Actions';
+import { setToken } from '../../store/Actions';
 import Cookies from 'universal-cookie';
 
 type LoginProps = {}
@@ -22,7 +22,8 @@ export default class Login extends Component<LoginProps, LoginState> {
         }
       }
 
-    login = () => {
+    login = (event: any) => {
+        event.preventDefault();
         const url = process.env.REACT_APP_API_SERVICE + "/authenticate";
         const postBody = {
             username: this.state.username,
@@ -40,7 +41,7 @@ export default class Login extends Component<LoginProps, LoginState> {
         fetch(url, requestMetadata)
             .then(res => res.json())
             .then(result => {
-                if (result.status == 403) {
+                if (result.status === 403) {
                     alert("Wrong credentials");
                 } else if (result.jwtToken) {
                     this.updateApiKey(result.jwtToken);
